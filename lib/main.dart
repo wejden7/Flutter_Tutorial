@@ -19,9 +19,8 @@ class MyApp extends StatelessWidget {
               decoration: BoxDecoration(
                   color: Colors.red,
                   image: DecorationImage(
-                      fit: BoxFit.fill,
-                      image: NetworkImage(
-                          "https://th.bing.com/th/id/OIP.GHPQTvkT3TqCadzvWvCZFgHaGs?pid=ImgDet&rs=1"))),
+                      image: AssetImage("images/1.jpg"),
+                      repeat: ImageRepeat.repeatX)),
               child: Text(
                 "How are you",
                 style: TextStyle(
