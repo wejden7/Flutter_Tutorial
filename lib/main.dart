@@ -12,7 +12,13 @@ class MyApp extends StatelessWidget {
       home:Scaffold(
         appBar: AppBar(),
         drawer: Drawer(),
-        body: Text(
+        body:Container(
+          color:Colors.red,
+          width: double.infinity,
+          height: double.infinity,
+          margin: EdgeInsets.all(10),
+          padding: EdgeInsets.all(30),
+          child:Text(
           "How are you",
           style:TextStyle(//ctrl+esp
             fontSize: 30.0,
@@ -26,8 +32,8 @@ class MyApp extends StatelessWidget {
               Shadow(color: Colors.red,blurRadius:2.0, offset:Offset(2.0,2.0) )
             ]
           ) ,
-          
         ),
+        )
       )
     );
   }
