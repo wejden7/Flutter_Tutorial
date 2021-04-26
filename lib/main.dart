@@ -13,14 +13,17 @@ class MyApp extends StatelessWidget {
             appBar: AppBar(),
             drawer: Drawer(),
             body: Container(
-              //decoration
               width: 200,
-              height: 200,
-              decoration: BoxDecoration(
-                  color: Colors.red,
-                  image: DecorationImage(
-                      image: AssetImage("images/1.jpg"),
-                      repeat: ImageRepeat.repeatX)),
+              height: 75,
+              margin: EdgeInsets.all(10),
+              padding: EdgeInsets.all(10),
+              decoration: BoxDecoration(color: Colors.red, boxShadow: [
+                BoxShadow(
+                    color: Colors.black,
+                    blurRadius: 10,
+                    spreadRadius: 5,
+                    offset: Offset(10.10, 10))
+              ]),
               child: Text(
                 "How are you",
                 style: TextStyle(
