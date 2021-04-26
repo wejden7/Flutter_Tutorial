@@ -13,25 +13,19 @@ class MyApp extends StatelessWidget {
         appBar: AppBar(),
         drawer: Drawer(),
         body:Container(
-          color:Colors.red,
-          width: double.infinity,
-          height: double.infinity,
-          margin: EdgeInsets.all(10),
-          padding: EdgeInsets.all(30),
+          //decoration
+          decoration: BoxDecoration(
+              color:Colors.red,
+              border: Border.all(
+                color: Colors.green,
+                width: 10,
+              ), 
+              //borderRadius: BorderRadius.circular(100),
+              borderRadius: BorderRadius.only(bottomLeft:Radius.circular(100) ,bottomRight: Radius.circular(50))
+                    ),
           child:Text(
           "How are you",
-          style:TextStyle(//ctrl+esp
-            fontSize: 30.0,
-            color: Colors.blue[400],//Color(0xFF..code_color)
-            fontWeight: FontWeight.bold,
-            letterSpacing: 2.0,
-            wordSpacing: 5.0,
-            decoration: TextDecoration.lineThrough,
-            //backgroundColor: Colors.red,
-            shadows: [
-              Shadow(color: Colors.red,blurRadius:2.0, offset:Offset(2.0,2.0) )
-            ]
-          ) ,
+          style:TextStyle(fontSize: 30.0,) ,
         ),
         )
       )
