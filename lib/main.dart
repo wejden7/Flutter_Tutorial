@@ -12,7 +12,9 @@ class MyApp extends StatelessWidget {
         home: Scaffold(
           appBar: AppBar(),
           drawer: Drawer(),
-          body: Container(),
+          body: Container(
+            child: Icon(Icons.notifications, size: 50, color: Colors.blue),
+          ),
         ));
   }
 }
