@@ -10,22 +10,27 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
         title: "Course Flutter",
         home: Scaffold(
-            appBar: AppBar(),
-            drawer: Drawer(),
-            body: Stack(
-              alignment: AlignmentDirectional.center,
-              children: [
-                Container(
-                  color: Colors.red,
-                  width: 300,
-                  height: 300,
-                ),
-                Container(
-                  color: Colors.green,
-                  width: 200,
-                  height: 200,
-                ),
-              ],
-            )));
+          appBar: AppBar(),
+          drawer: Drawer(),
+          body: Container(
+              width: 400,
+              height: 400,
+              color: Colors.black,
+              child: Stack(
+                clipBehavior: Clip.none,
+                alignment: AlignmentDirectional.center,
+                children: [
+                  Positioned(
+                    width: 200,
+                    height: 200,
+                    top: 300,
+                    child: Container(
+                      color: Colors.red,
+                      child: Text("wejden"),
+                    ),
+                  )
+                ],
+              )),
+        ));
   }
 }
