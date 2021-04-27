@@ -12,21 +12,9 @@ class MyApp extends StatelessWidget {
         home: Scaffold(
             appBar: AppBar(),
             drawer: Drawer(),
-            body: Container(
-              color: Colors.red,
-              width: double.infinity,
-              height: 75,
-              margin: EdgeInsets.all(10),
-              padding: EdgeInsets.all(10),
-              //alignment: Alignment.bottomLeft,
-              child: Text(
-                "How are you",
-                // textDirection: TextDirection.ltr,
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                  fontSize: 30.0,
-                ),
-              ),
+            body: //Image.asset("images/1.jpg")
+                Image.network(
+              "https://media.routard.com/image/53/3/prague-fb.1468533.jpg",
             )));
   }
 }
