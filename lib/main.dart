@@ -10,11 +10,16 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
         title: "Course Flutter",
         home: Scaffold(
-            appBar: AppBar(),
-            drawer: Drawer(),
-            body: //Image.asset("images/1.jpg")
-                Image.network(
-              "https://media.routard.com/image/53/3/prague-fb.1468533.jpg",
-            )));
+            body: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          mainAxisSize: MainAxisSize.max,
+          children: [
+            Text("No"),
+            Text("Flutter"),
+            Text("Yes")
+            //liste de widget
+          ],
+        )));
   }
 }
