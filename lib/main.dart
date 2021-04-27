@@ -10,6 +10,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
         title: "Course Flutter",
         home: Scaffold(
+<<<<<<< HEAD
             appBar: AppBar(),
             drawer: Drawer(),
             body: Card(
@@ -25,5 +26,18 @@ class MyApp extends StatelessWidget {
                     fontSize: 40.0,
                   )),
             )));
+=======
+            body: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          mainAxisSize: MainAxisSize.max,
+          children: [
+            Text("No"),
+            Text("Flutter"),
+            Text("Yes")
+            //liste de widget
+          ],
+        )));
+>>>>>>> Column
   }
 }
