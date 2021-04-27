@@ -13,6 +13,7 @@ class MyApp extends StatelessWidget {
 <<<<<<< HEAD
             appBar: AppBar(),
             drawer: Drawer(),
+<<<<<<< HEAD
             body: Card(
               color: Colors.red,
               elevation: 50,
@@ -25,6 +26,26 @@ class MyApp extends StatelessWidget {
                   style: TextStyle(
                     fontSize: 40.0,
                   )),
+=======
+            body: Container(
+              color: Colors.red,
+              child: Row(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.center,
+                mainAxisSize: MainAxisSize.max,
+                children: [
+                  Text("data"),
+                  Text("x"),
+                  Container(
+                    color: Colors.black,
+                    child: Text("data"),
+                  ),
+                  Card(
+                    child: Text("card 1"),
+                  )
+                ],
+              ),
+>>>>>>> Row
             )));
 =======
             body: Column(
