@@ -10,18 +10,27 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
         title: "Course Flutter",
         home: Scaffold(
-            appBar: AppBar(),
-            drawer: Drawer(),
-            body: Column(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              mainAxisSize: MainAxisSize.max,
-              children: [
-                Text("No"),
-                Text("Flutter"),
-                Text("Yes")
-                //liste de widget
-              ],
-            )));
+          appBar: AppBar(),
+          drawer: Drawer(),
+          body: Container(
+              width: 400,
+              height: 400,
+              color: Colors.black,
+              child: Stack(
+                clipBehavior: Clip.none,
+                alignment: AlignmentDirectional.center,
+                children: [
+                  Positioned(
+                    width: 200,
+                    height: 200,
+                    top: 300,
+                    child: Container(
+                      color: Colors.red,
+                      child: Text("wejden"),
+                    ),
+                  )
+                ],
+              )),
+        ));
   }
 }
