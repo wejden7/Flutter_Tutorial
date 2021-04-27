@@ -12,7 +12,19 @@ class MyApp extends StatelessWidget {
         home: Scaffold(
           appBar: AppBar(),
           drawer: Drawer(),
-          body: Container(),
+          body: Container(
+            child: Row(
+              children: [
+                Text("Hay Flutter"),
+                VerticalDivider(
+                  color: Colors.black,
+                  width: 150,
+                  thickness: 1,
+                ),
+                Text("New Flutter")
+              ],
+            ),
+          ),
         ));
   }
 }
