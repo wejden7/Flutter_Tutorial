@@ -13,6 +13,7 @@ class MyApp extends StatelessWidget {
             appBar: AppBar(),
             drawer: Drawer(),
             body: Stack(
+              alignment: AlignmentDirectional.center,
               children: [
                 Container(
                   color: Colors.red,
@@ -24,11 +25,6 @@ class MyApp extends StatelessWidget {
                   width: 200,
                   height: 200,
                 ),
-                Container(
-                  color: Colors.blue,
-                  width: 100,
-                  height: 100,
-                )
               ],
             )));
   }
