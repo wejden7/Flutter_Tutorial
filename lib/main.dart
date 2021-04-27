@@ -12,25 +12,7 @@ class MyApp extends StatelessWidget {
         home: Scaffold(
           appBar: AppBar(),
           drawer: Drawer(),
-          body: Container(
-              width: 400,
-              height: 400,
-              color: Colors.black,
-              child: Stack(
-                clipBehavior: Clip.none,
-                alignment: AlignmentDirectional.center,
-                children: [
-                  Positioned(
-                    width: 200,
-                    height: 200,
-                    top: 300,
-                    child: Container(
-                      color: Colors.red,
-                      child: Text("wejden"),
-                    ),
-                  )
-                ],
-              )),
+          body: Container(),
         ));
   }
 }
