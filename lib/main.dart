@@ -12,15 +12,23 @@ class MyApp extends StatelessWidget {
         home: Scaffold(
             appBar: AppBar(),
             drawer: Drawer(),
-            body: Column(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              mainAxisSize: MainAxisSize.max,
+            body: Stack(
               children: [
-                Text("No"),
-                Text("Flutter"),
-                Text("Yes")
-                //liste de widget
+                Container(
+                  color: Colors.red,
+                  width: 300,
+                  height: 300,
+                ),
+                Container(
+                  color: Colors.green,
+                  width: 200,
+                  height: 200,
+                ),
+                Container(
+                  color: Colors.blue,
+                  width: 100,
+                  height: 100,
+                )
               ],
             )));
   }
