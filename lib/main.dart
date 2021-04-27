@@ -12,9 +12,18 @@ class MyApp extends StatelessWidget {
         home: Scaffold(
             appBar: AppBar(),
             drawer: Drawer(),
-            body: //Image.asset("images/1.jpg")
-                Image.network(
-              "https://media.routard.com/image/53/3/prague-fb.1468533.jpg",
+            body: Card(
+              color: Colors.red,
+              elevation: 50,
+              shadowColor: Colors.red,
+              // shape: Border.all(color: Colors.black, width: 2),
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(20),
+                  side: BorderSide(color: Colors.green, width: 4)),
+              child: Text("Haw are you",
+                  style: TextStyle(
+                    fontSize: 40.0,
+                  )),
             )));
   }
 }
