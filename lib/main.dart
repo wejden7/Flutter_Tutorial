@@ -20,9 +20,12 @@ class MyApp extends StatelessWidget {
             ),
             body: Column(
               children: [
-                InkWell(
-                  child: Text("Flutter"),
-                  onTap: () => print("Flutter"),
+                GestureDetector(
+                  child: Icon(
+                    Icons.add,
+                    color: Colors.red,
+                  ),
+                  onTap: () => print('Flutter GestureDetector '),
                 )
               ],
             )));
