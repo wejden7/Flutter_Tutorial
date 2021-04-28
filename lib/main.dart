@@ -14,12 +14,13 @@ class MyApp extends StatelessWidget {
             drawer: Drawer(),
             body: Column(
               children: [
-                TextButton(
-                  onLongPress: () => print("Material Button"),
-                  child: Text("Flutter"),
-                  style: TextButton.styleFrom(
-                      primary: Colors.black, backgroundColor: Colors.blue),
-                  onPressed: () {},
+                IconButton(
+                  icon: Icon(
+                    Icons.access_alarm_rounded,
+                    size: 50,
+                  ),
+                  onPressed: () => print("Flutter"),
+                  color: Colors.red,
                 )
               ],
             )));
