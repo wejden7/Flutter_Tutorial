@@ -12,6 +12,12 @@ class MyApp extends StatelessWidget {
         home: Scaffold(
             appBar: AppBar(),
             drawer: Drawer(),
+            //FloatingActionButton
+            floatingActionButton: FloatingActionButton(
+              onPressed: () {},
+              backgroundColor: Colors.red,
+              child: Icon(Icons.place),
+            ),
             body: Column(
               children: [
                 InkWell(
