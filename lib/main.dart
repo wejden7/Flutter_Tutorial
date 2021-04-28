@@ -10,9 +10,23 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
         title: "Course Flutter",
         home: Scaffold(
-          appBar: AppBar(),
-          drawer: Drawer(),
-          body: Container(),
-        ));
+            appBar: AppBar(),
+            drawer: Drawer(),
+            body: Column(
+              children: [
+                ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                        primary: Colors.red,
+                        padding: EdgeInsets.all(100),
+                        textStyle: TextStyle(
+                            fontSize: 30, fontWeight: FontWeight.bold),
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(30))),
+                    onPressed: () {
+                      print('onPressed Button');
+                    },
+                    child: Text("Button"))
+              ],
+            )));
   }
 }
