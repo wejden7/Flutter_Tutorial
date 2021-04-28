@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
             drawer: Drawer(),
             body: Column(
               children: [
-                ElevatedButton(
+                ElevatedButton.icon(
                     style: ElevatedButton.styleFrom(
                         primary: Colors.red,
                         padding: EdgeInsets.all(100),
@@ -25,7 +25,8 @@ class MyApp extends StatelessWidget {
                     onPressed: () {
                       print('onPressed Button');
                     },
-                    child: Text("Button"))
+                    icon: Icon(Icons.ac_unit),
+                    label: Text("Button"))
               ],
             )));
   }
