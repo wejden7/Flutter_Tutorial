@@ -13,6 +13,145 @@ class _TestState extends State<Test> {
 
   Widget build(BuildContext context) {
     return Container(
+<<<<<<< HEAD
+        padding: EdgeInsets.all(10),
+        child: SingleChildScrollView(
+          scrollDirection: Axis.vertical,
+          child: Column(
+            children: [
+              Text(
+                "choose Country",
+                style: TextStyle(fontSize: 30),
+              ),
+              Container(
+                margin: EdgeInsets.all(20),
+                child: CheckboxListTile(
+                  controlAffinity: ListTileControlAffinity.leading,
+                  activeColor: Colors.red,
+                  contentPadding: EdgeInsets.only(top: 20, left: 30, right: 30),
+                  title: Text("country Usa"),
+                  subtitle: Text("usa country"),
+                  secondary: Icon(Icons.access_alarm_outlined),
+                  isThreeLine: true,
+                  selected: usa,
+                  value: usa,
+                  onChanged: (val) => {
+                    setState(() {
+                      usa = val;
+                    })
+                  },
+                ),
+              ),
+              CheckboxListTile(
+                activeColor: Colors.red,
+                controlAffinity: ListTileControlAffinity.platform,
+                contentPadding: EdgeInsets.only(top: 20, left: 30, right: 30),
+                title: Text("country Usa"),
+                subtitle: Text("usa country"),
+                secondary: Icon(Icons.access_alarm_outlined),
+                isThreeLine: true,
+                selected: usa,
+                value: usa,
+                onChanged: (val) => {
+                  setState(() {
+                    usa = val;
+                  })
+                },
+              ),
+              CheckboxListTile(
+                activeColor: Colors.red,
+                contentPadding: EdgeInsets.only(top: 20, left: 30, right: 30),
+                title: Text("country Usa"),
+                subtitle: Text("usa country"),
+                secondary: Icon(Icons.access_alarm_outlined),
+                isThreeLine: true,
+                selected: usa,
+                value: usa,
+                onChanged: (val) => {
+                  setState(() {
+                    usa = val;
+                  })
+                },
+              ),
+              CheckboxListTile(
+                activeColor: Colors.red,
+                contentPadding: EdgeInsets.only(top: 20, left: 30, right: 30),
+                title: Text("country Usa"),
+                subtitle: Text("usa country"),
+                secondary: Icon(Icons.access_alarm_outlined),
+                isThreeLine: true,
+                selected: usa,
+                value: usa,
+                onChanged: (val) => {
+                  setState(() {
+                    usa = val;
+                  })
+                },
+              ),
+              CheckboxListTile(
+                activeColor: Colors.red,
+                contentPadding: EdgeInsets.only(top: 20, left: 30, right: 30),
+                title: Text("country Usa"),
+                subtitle: Text("usa country"),
+                secondary: Icon(Icons.access_alarm_outlined),
+                isThreeLine: true,
+                selected: usa,
+                value: usa,
+                onChanged: (val) => {
+                  setState(() {
+                    usa = val;
+                  })
+                },
+              ),
+              CheckboxListTile(
+                activeColor: Colors.red,
+                contentPadding: EdgeInsets.only(top: 20, left: 30, right: 30),
+                title: Text("country Usa"),
+                subtitle: Text("usa country"),
+                secondary: Icon(Icons.access_alarm_outlined),
+                isThreeLine: true,
+                selected: usa,
+                value: usa,
+                onChanged: (val) => {
+                  setState(() {
+                    usa = val;
+                  })
+                },
+              ),
+              CheckboxListTile(
+                activeColor: Colors.red,
+                contentPadding: EdgeInsets.only(top: 20, left: 30, right: 30),
+                title: Text("country Usa"),
+                subtitle: Text("usa country"),
+                secondary: Icon(Icons.access_alarm_outlined),
+                isThreeLine: true,
+                selected: usa,
+                value: usa,
+                onChanged: (val) => {
+                  setState(() {
+                    usa = val;
+                  })
+                },
+              ),
+              CheckboxListTile(
+                activeColor: Colors.red,
+                contentPadding: EdgeInsets.only(top: 20, left: 30, right: 30),
+                title: Text("country Usa"),
+                subtitle: Text("usa country"),
+                secondary: Icon(Icons.access_alarm_outlined),
+                isThreeLine: true,
+                selected: usa,
+                value: usa,
+                onChanged: (val) => {
+                  setState(() {
+                    usa = val;
+                  })
+                },
+              ),
+            ],
+          ),
+        ));
+=======
       padding: EdgeInsets.all(10),
       child: Column(
         children: [
@@ -64,5 +203,6 @@ class _TestState extends State<Test> {
         ],
       ),
     );
+>>>>>>> checkBox
   }
 }
