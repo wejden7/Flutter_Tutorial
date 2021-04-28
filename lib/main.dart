@@ -12,7 +12,13 @@ class MyApp extends StatelessWidget {
         home: Scaffold(
           appBar: AppBar(),
           drawer: Drawer(),
-          body: Container(),
+          body: SizedBox(
+              width: 300,
+              height: 300,
+              child: Container(
+                child: Text("Flutter"),
+                color: Colors.blue,
+              )),
         ));
   }
 }
