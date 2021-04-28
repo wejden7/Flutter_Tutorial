@@ -14,13 +14,9 @@ class MyApp extends StatelessWidget {
             drawer: Drawer(),
             body: Column(
               children: [
-                IconButton(
-                  icon: Icon(
-                    Icons.access_alarm_rounded,
-                    size: 50,
-                  ),
-                  onPressed: () => print("Flutter"),
-                  color: Colors.red,
+                InkWell(
+                  child: Text("Flutter"),
+                  onTap: () => print("Flutter"),
                 )
               ],
             )));
