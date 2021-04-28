@@ -14,14 +14,11 @@ class _TestState extends State<Test> {
         margin: EdgeInsets.all(10),
         padding: EdgeInsets.all(20),
         color: Colors.red,
-        child: DropdownButton(
+        child: DropdownButtonFormField(
           //dropdownColor: Colors.blue,
           icon: Icon(Icons.access_alarm),
           iconSize: 50,
           iconEnabledColor: Colors.blue,
-          underline: Divider(
-            thickness: 0,
-          ),
           isExpanded: true,
           hint: Row(
             children: [
