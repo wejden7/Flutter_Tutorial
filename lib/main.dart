@@ -14,19 +14,13 @@ class MyApp extends StatelessWidget {
             drawer: Drawer(),
             body: Column(
               children: [
-                ElevatedButton.icon(
-                    style: ElevatedButton.styleFrom(
-                        primary: Colors.red,
-                        padding: EdgeInsets.all(100),
-                        textStyle: TextStyle(
-                            fontSize: 30, fontWeight: FontWeight.bold),
-                        shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(30))),
-                    onPressed: () {
-                      print('onPressed Button');
-                    },
-                    icon: Icon(Icons.ac_unit),
-                    label: Text("Button"))
+                MaterialButton(
+                  onPressed: () => print("Material Button"),
+                  child: Text("Flutter"),
+                  color: Colors.red,
+                  splashColor: Colors.black,
+                  textColor: Colors.white,
+                )
               ],
             )));
   }
