@@ -14,12 +14,12 @@ class MyApp extends StatelessWidget {
             drawer: Drawer(),
             body: Column(
               children: [
-                MaterialButton(
-                  onPressed: () => print("Material Button"),
+                TextButton(
+                  onLongPress: () => print("Material Button"),
                   child: Text("Flutter"),
-                  color: Colors.red,
-                  splashColor: Colors.black,
-                  textColor: Colors.white,
+                  style: TextButton.styleFrom(
+                      primary: Colors.black, backgroundColor: Colors.blue),
+                  onPressed: () {},
                 )
               ],
             )));
