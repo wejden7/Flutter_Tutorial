@@ -12,7 +12,37 @@ class MyApp extends StatelessWidget {
         home: Scaffold(
           appBar: AppBar(),
           drawer: Drawer(),
-          body: Container(),
+          body: Wrap(
+            direction: Axis.vertical,
+            spacing: 50,
+            alignment: WrapAlignment.center,
+            children: [
+              Container(
+                width: 100,
+                height: 100,
+                margin: EdgeInsets.all(10),
+                color: Colors.red,
+              ),
+              Container(
+                width: 100,
+                height: 100,
+                margin: EdgeInsets.all(10),
+                color: Colors.red,
+              ),
+              Container(
+                width: 100,
+                height: 100,
+                margin: EdgeInsets.all(10),
+                color: Colors.red,
+              ),
+              Container(
+                width: 100,
+                height: 100,
+                margin: EdgeInsets.all(10),
+                color: Colors.red,
+              ),
+            ],
+          ),
         ));
   }
 }
