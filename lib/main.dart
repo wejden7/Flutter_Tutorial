@@ -16,16 +16,24 @@ class MyApp extends StatelessWidget {
               width: 400,
               height: 400,
               color: Colors.black,
-              child: Stack(
-                clipBehavior: Clip.none,
+              child: IndexedStack(
+                index: 1,
                 alignment: AlignmentDirectional.center,
                 children: [
                   Positioned(
                     width: 200,
                     height: 200,
-                    top: 300,
                     child: Container(
                       color: Colors.red,
+                      child: Text("wejden"),
+                    ),
+                  ),
+                  Positioned(
+                    width: 200,
+                    height: 100,
+                    top: 100,
+                    child: Container(
+                      color: Colors.blue,
                       child: Text("wejden"),
                     ),
                   )
