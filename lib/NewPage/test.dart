@@ -20,26 +20,20 @@ class _TestState extends State<Test> {
   ];
   @override
   Widget build(BuildContext context) {
-    return ListView.separated(
-        separatorBuilder: (context, i) {
-          return Divider(
-            color: Colors.black,
-            height: 2,
-            thickness: 5,
-          );
-        },
+    return GridView.builder(
         physics: BouncingScrollPhysics(),
         itemCount: mobile.length,
+        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+            crossAxisCount: 2, crossAxisSpacing: 5, mainAxisSpacing: 5),
         itemBuilder: (context, i) {
-          return ListTile(
-            leading: CircleAvatar(
-              backgroundColor: Colors.blue,
-              child: Text(mobile[i]["avatar"]),
+          return Container(
+            // margin: EdgeInsets.only(top: 10, left: 5, right: 5),
+            child: ListTile(
+              tileColor: Colors.red,
+              title: Text(mobile[i]["name"]),
+              subtitle: Text(mobile[i]["screen"]),
+              leading: Icon(Icons.alarm_add),
             ),
-            title: Text(mobile[i]["name"]),
-            subtitle: Text(mobile[i]["screen"]),
-            trailing: Icon(Icons.emoji_objects_rounded),
-            isThreeLine: true,
           );
         });
   }
