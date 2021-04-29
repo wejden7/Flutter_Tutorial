@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
 
 class Test extends StatefulWidget {
   @override
@@ -13,67 +12,85 @@ class _TestState extends State<Test> {
   Widget build(BuildContext context) {
     return Wrap(
       children: [
-        Row(children: [
-          Text("Usa"),
-          Radio(
-              activeColor: Colors.red,
-              value: "use",
-              groupValue: country,
-              onChanged: (val) {
-                setState(() {
-                  country = val;
-                });
-              }),
-          Text("FR"),
-          Radio(
-              value: "FR",
-              groupValue: country,
-              onChanged: (val) {
-                setState(() {
-                  country = val;
-                });
-              }),
-          Text("TN"),
-          Radio(
-              value: "TN",
-              groupValue: country,
-              onChanged: (val) {
-                setState(() {
-                  country = val;
-                });
-              }),
-        ]),
-        Row(
-          children: [
-            Text("Java"),
-            Radio(
-                value: "Java",
-                groupValue: prog,
-                onChanged: (val) {
-                  setState(() {
-                    prog = val;
-                  });
-                }),
-            Text("c++"),
-            Radio(
-                value: "c++",
-                groupValue: prog,
-                onChanged: (val) {
-                  setState(() {
-                    prog = val;
-                  });
-                }),
-            Text("Dart"),
-            Radio(
-                value: "Dart",
-                groupValue: prog,
-                onChanged: (val) {
-                  setState(() {
-                    prog = val;
-                  });
-                }),
-          ],
-        )
+        RadioListTile(
+            isThreeLine: true,
+            controlAffinity: ListTileControlAffinity.trailing,
+            title: Text("Country USA"),
+            subtitle: Text("Amireca"),
+            secondary: Icon(Icons.hotel),
+            value: "Usa",
+            groupValue: country,
+            onChanged: (val) {
+              setState(() {
+                country = val;
+              });
+            }),
+        RadioListTile(
+            title: Text("Country Fr"),
+            subtitle: Text("France"),
+            secondary: Icon(Icons.hotel),
+            value: "Fr",
+            groupValue: country,
+            onChanged: (val) {
+              setState(() {
+                country = val;
+              });
+            }),
+        RadioListTile(
+            title: Text("Country It"),
+            subtitle: Text("Italia"),
+            secondary: Icon(Icons.hotel),
+            value: "It",
+            groupValue: country,
+            onChanged: (val) {
+              setState(() {
+                country = val;
+              });
+            }),
+        RadioListTile(
+            title: Text("Country Tu"),
+            subtitle: Text("Tunisa"),
+            secondary: Icon(Icons.hotel),
+            value: "Tn",
+            groupValue: country,
+            onChanged: (val) {
+              setState(() {
+                country = val;
+              });
+            }),
+        RadioListTile(
+            title: Text("Country Gr"),
+            subtitle: Text("Grmany"),
+            secondary: Icon(Icons.hotel),
+            value: "Gr",
+            groupValue: country,
+            onChanged: (val) {
+              setState(() {
+                country = val;
+              });
+            }),
+        RadioListTile(
+            title: Text("Country Ch"),
+            subtitle: Text("Chine"),
+            secondary: Icon(Icons.hotel),
+            value: "Ch",
+            groupValue: country,
+            onChanged: (val) {
+              setState(() {
+                country = val;
+              });
+            }),
+        RadioListTile(
+            title: Text("Country Kr"),
+            subtitle: Text("Kouria"),
+            secondary: Icon(Icons.hotel),
+            value: "Kr",
+            groupValue: country,
+            onChanged: (val) {
+              setState(() {
+                country = val;
+              });
+            })
       ],
     );
   }
