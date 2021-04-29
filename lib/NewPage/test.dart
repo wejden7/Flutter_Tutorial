@@ -21,32 +21,16 @@ class _TestState extends State<Test> {
   @override
   Widget build(BuildContext context) {
     return GridView.count(
-      crossAxisCount: 3,
-      crossAxisSpacing: 5,
-      mainAxisSpacing: 5,
-      padding: EdgeInsets.all(10),
-      children: [
-        Container(
-          child: Text("Fluter"),
-          height: 200,
-          color: Colors.blue[100],
-        ),
-        Container(
-          child: Text("Fluter"),
-          height: 200,
-          color: Colors.blue[200],
-        ),
-        Container(
-          child: Text("Fluter"),
-          height: 200,
-          color: Colors.blue[300],
-        ),
-        Container(
-          child: Text("Fluter"),
-          height: 200,
-          color: Colors.blue[400],
-        ),
-      ],
-    );
+        crossAxisCount: 3,
+        crossAxisSpacing: 5,
+        mainAxisSpacing: 5,
+        padding: EdgeInsets.all(10),
+        children: List.generate(mobile.length, (i) {
+          return Container(
+            child: Text(mobile[i]["name"]),
+            height: 200,
+            color: Colors.blue[i * 100],
+          );
+        }));
   }
 }
