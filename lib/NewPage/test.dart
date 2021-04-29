@@ -24,7 +24,10 @@ class _TestState extends State<Test> {
         physics: BouncingScrollPhysics(),
         itemCount: mobile.length,
         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-            crossAxisCount: 2, crossAxisSpacing: 5, mainAxisSpacing: 5),
+            crossAxisCount: 2,
+            crossAxisSpacing: 5,
+            mainAxisSpacing: 5,
+            childAspectRatio: 3),
         itemBuilder: (context, i) {
           return Container(
             // margin: EdgeInsets.only(top: 10, left: 5, right: 5),
