@@ -20,7 +20,14 @@ class _TestState extends State<Test> {
   ];
   @override
   Widget build(BuildContext context) {
-    return ListView.builder(
+    return ListView.separated(
+        separatorBuilder: (context, i) {
+          return Divider(
+            color: Colors.black,
+            height: 2,
+            thickness: 5,
+          );
+        },
         physics: BouncingScrollPhysics(),
         itemCount: mobile.length,
         itemBuilder: (context, i) {
