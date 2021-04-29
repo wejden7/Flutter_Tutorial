@@ -29,7 +29,9 @@ class _TestState extends State<Test> {
         ListTile(
           leading: GestureDetector(
             behavior: HitTestBehavior.translucent,
-            onTap: () {},
+            onTap: () {
+              print("ontap");
+            },
             child: Container(
               width: 48,
               height: 48,
