@@ -20,12 +20,11 @@ class _TestState extends State<Test> {
   ];
   @override
   Widget build(BuildContext context) {
-    return GridView(
-      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-        crossAxisCount: 2,
-        mainAxisSpacing: 5,
-        crossAxisSpacing: 5,
-      ),
+    return GridView.count(
+      crossAxisCount: 3,
+      crossAxisSpacing: 5,
+      mainAxisSpacing: 5,
+      padding: EdgeInsets.all(10),
       children: [
         Container(
           child: Text("Fluter"),
