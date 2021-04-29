@@ -9,53 +9,163 @@ class _TestState extends State<Test> {
   String _sub = "New Project";
   @override
   Widget build(BuildContext context) {
-    return Wrap(
+    return ListView(
+      physics: BouncingScrollPhysics(),
+      primary: false,
+      scrollDirection: Axis.vertical,
       children: [
-        GestureDetector(
-          child: CircleAvatar(
+        ListTile(
+          leading: CircleAvatar(
             backgroundColor: Colors.blue,
-            child: Text('WE'),
+            child: Text("FL"),
           ),
-          onTap: () {
-            ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-              backgroundColor: Colors.red,
-              content: Text("Flutter"),
-              action: SnackBarAction(
-                label: "Action",
-                onPressed: () {
-                  _showDialog(context);
-                },
+          title: Text("Flutter"),
+          subtitle: Text("programmet"),
+          trailing: Icon(Icons.emoji_objects_rounded),
+          isThreeLine: true,
+        ),
+        ListTile(
+          leading: CircleAvatar(
+            backgroundColor: Colors.blue,
+            child: Text("FL"),
+          ),
+          title: Text("Flutter"),
+          subtitle: Text("programmet"),
+          trailing: Icon(Icons.emoji_objects_rounded),
+          isThreeLine: true,
+        ),
+        ListTile(
+          leading: CircleAvatar(
+            backgroundColor: Colors.blue,
+            child: Text("FL"),
+          ),
+          title: Text("Flutter"),
+          subtitle: Text("programmet"),
+          trailing: Icon(Icons.emoji_objects_rounded),
+          isThreeLine: true,
+        ),
+        ListTile(
+          leading: CircleAvatar(
+            backgroundColor: Colors.blue,
+            child: Text("FL"),
+          ),
+          title: Text("Flutter"),
+          subtitle: Text("programmet"),
+          trailing: Icon(Icons.emoji_objects_rounded),
+          isThreeLine: true,
+        ),
+        ListTile(
+          leading: CircleAvatar(
+            backgroundColor: Colors.blue,
+            child: Text("FL"),
+          ),
+          title: Text("Flutter"),
+          subtitle: Text("programmet"),
+          trailing: Icon(Icons.emoji_objects_rounded),
+          isThreeLine: true,
+        ),
+        ListTile(
+          leading: CircleAvatar(
+            backgroundColor: Colors.blue,
+            child: Text("FL"),
+          ),
+          title: Text("Flutter"),
+          subtitle: Text("programmet"),
+          trailing: Icon(Icons.emoji_objects_rounded),
+          isThreeLine: true,
+        ),
+        ListTile(
+          leading: CircleAvatar(
+            backgroundColor: Colors.blue,
+            child: Text("FL"),
+          ),
+          title: Text("Flutter"),
+          subtitle: Text("programmet"),
+          trailing: Icon(Icons.emoji_objects_rounded),
+          isThreeLine: true,
+        ),
+        ListTile(
+          leading: CircleAvatar(
+            backgroundColor: Colors.blue,
+            child: Text("FL"),
+          ),
+          title: Text("Flutter"),
+          subtitle: Text("programmet"),
+          trailing: Icon(Icons.emoji_objects_rounded),
+          isThreeLine: true,
+        ),
+        Container(
+          margin: EdgeInsets.symmetric(vertical: 10),
+          padding: EdgeInsets.symmetric(vertical: 10),
+          decoration: BoxDecoration(
+            border: Border.symmetric(
+                horizontal: BorderSide(color: Colors.black, width: 1)),
+          ),
+          height: 100,
+          child: ListView(
+            physics: BouncingScrollPhysics(),
+            primary: false,
+            scrollDirection: Axis.horizontal,
+            children: [
+              CircleAvatar(
+                backgroundColor: Colors.blue,
+                child: Text("We"),
+                radius: 50,
               ),
-              duration: const Duration(milliseconds: 1500),
-              width: 280.0, // Width of the SnackBar.
-              padding: const EdgeInsets.symmetric(
-                horizontal: 8.0, // Inner padding for SnackBar content.
+              CircleAvatar(
+                backgroundColor: Colors.blue,
+                child: Text("We"),
+                radius: 50,
               ),
-              behavior: SnackBarBehavior.floating,
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(10.0),
+              CircleAvatar(
+                backgroundColor: Colors.blue,
+                child: Text("We"),
+                radius: 50,
               ),
-            ));
-          },
-        )
+              CircleAvatar(
+                backgroundColor: Colors.blue,
+                child: Text("We"),
+                radius: 50,
+              ),
+              CircleAvatar(
+                backgroundColor: Colors.blue,
+                child: Text("We"),
+                radius: 50,
+              ),
+              CircleAvatar(
+                backgroundColor: Colors.blue,
+                child: Text("We"),
+                radius: 50,
+              ),
+              CircleAvatar(
+                backgroundColor: Colors.blue,
+                child: Text("We"),
+                radius: 50,
+              ),
+            ],
+          ),
+        ),
+        ListTile(
+          leading: CircleAvatar(
+            backgroundColor: Colors.blue,
+            child: Text("FL"),
+          ),
+          title: Text("Flutter"),
+          subtitle: Text("programmet"),
+          trailing: Icon(Icons.emoji_objects_rounded),
+          isThreeLine: true,
+        ),
+        ListTile(
+          leading: CircleAvatar(
+            backgroundColor: Colors.blue,
+            child: Text("FL"),
+          ),
+          title: Text("Flutter"),
+          subtitle: Text("programmet"),
+          trailing: Icon(Icons.emoji_objects_rounded),
+          isThreeLine: true,
+        ),
       ],
     );
   }
-}
-
-_showDialog(BuildContext context) {
-  showDialog(
-      context: context,
-      builder: (context) {
-        return AlertDialog(
-          title: Text("Flutter"),
-          content: Text("Course of flutter is required"),
-          actions: [
-            TextButton(onPressed: () {}, child: Text("Yes")),
-            TextButton(onPressed: () {}, child: Text("No"))
-          ],
-          elevation: 24,
-          // backgroundColor: Colors.red,
-        );
-      });
 }
