@@ -6,166 +6,34 @@ class Test extends StatefulWidget {
 }
 
 class _TestState extends State<Test> {
-  String _sub = "New Project";
+  List mobile = [
+    {"name": "Sumsang s1", "screen": "7.1", "avatar": "SA"},
+    {"name": "Sumsang s2", "screen": "7.1", "avatar": "SA"},
+    {"name": "Sumsang s3", "screen": "7.1", "avatar": "SA"},
+    {"name": "Sumsang s4", "screen": "7.1", "avatar": "SA"},
+    {"name": "Sumsang s5", "screen": "7.1", "avatar": "SA"},
+    {"name": "Sumsang s6", "screen": "7.1", "avatar": "DR"},
+    {"name": "Sumsang s7", "screen": "7.1", "avatar": "SA"},
+    {"name": "Sumsang s8", "screen": "7.1", "avatar": "SA"},
+    {"name": "Sumsang s9", "screen": "7.1", "avatar": "IF"},
+    {"name": "Sumsang s10", "screen": "7.1", "avatar": "Ap"},
+  ];
   @override
   Widget build(BuildContext context) {
-    return ListView(
-      physics: BouncingScrollPhysics(),
-      primary: false,
-      scrollDirection: Axis.vertical,
-      children: [
-        ListTile(
-          leading: CircleAvatar(
-            backgroundColor: Colors.blue,
-            child: Text("FL"),
-          ),
-          title: Text("Flutter"),
-          subtitle: Text("programmet"),
-          trailing: Icon(Icons.emoji_objects_rounded),
-          isThreeLine: true,
-        ),
-        ListTile(
-          leading: CircleAvatar(
-            backgroundColor: Colors.blue,
-            child: Text("FL"),
-          ),
-          title: Text("Flutter"),
-          subtitle: Text("programmet"),
-          trailing: Icon(Icons.emoji_objects_rounded),
-          isThreeLine: true,
-        ),
-        ListTile(
-          leading: CircleAvatar(
-            backgroundColor: Colors.blue,
-            child: Text("FL"),
-          ),
-          title: Text("Flutter"),
-          subtitle: Text("programmet"),
-          trailing: Icon(Icons.emoji_objects_rounded),
-          isThreeLine: true,
-        ),
-        ListTile(
-          leading: CircleAvatar(
-            backgroundColor: Colors.blue,
-            child: Text("FL"),
-          ),
-          title: Text("Flutter"),
-          subtitle: Text("programmet"),
-          trailing: Icon(Icons.emoji_objects_rounded),
-          isThreeLine: true,
-        ),
-        ListTile(
-          leading: CircleAvatar(
-            backgroundColor: Colors.blue,
-            child: Text("FL"),
-          ),
-          title: Text("Flutter"),
-          subtitle: Text("programmet"),
-          trailing: Icon(Icons.emoji_objects_rounded),
-          isThreeLine: true,
-        ),
-        ListTile(
-          leading: CircleAvatar(
-            backgroundColor: Colors.blue,
-            child: Text("FL"),
-          ),
-          title: Text("Flutter"),
-          subtitle: Text("programmet"),
-          trailing: Icon(Icons.emoji_objects_rounded),
-          isThreeLine: true,
-        ),
-        ListTile(
-          leading: CircleAvatar(
-            backgroundColor: Colors.blue,
-            child: Text("FL"),
-          ),
-          title: Text("Flutter"),
-          subtitle: Text("programmet"),
-          trailing: Icon(Icons.emoji_objects_rounded),
-          isThreeLine: true,
-        ),
-        ListTile(
-          leading: CircleAvatar(
-            backgroundColor: Colors.blue,
-            child: Text("FL"),
-          ),
-          title: Text("Flutter"),
-          subtitle: Text("programmet"),
-          trailing: Icon(Icons.emoji_objects_rounded),
-          isThreeLine: true,
-        ),
-        Container(
-          margin: EdgeInsets.symmetric(vertical: 10),
-          padding: EdgeInsets.symmetric(vertical: 10),
-          decoration: BoxDecoration(
-            border: Border.symmetric(
-                horizontal: BorderSide(color: Colors.black, width: 1)),
-          ),
-          height: 100,
-          child: ListView(
-            physics: BouncingScrollPhysics(),
-            primary: false,
-            scrollDirection: Axis.horizontal,
-            children: [
-              CircleAvatar(
-                backgroundColor: Colors.blue,
-                child: Text("We"),
-                radius: 50,
-              ),
-              CircleAvatar(
-                backgroundColor: Colors.blue,
-                child: Text("We"),
-                radius: 50,
-              ),
-              CircleAvatar(
-                backgroundColor: Colors.blue,
-                child: Text("We"),
-                radius: 50,
-              ),
-              CircleAvatar(
-                backgroundColor: Colors.blue,
-                child: Text("We"),
-                radius: 50,
-              ),
-              CircleAvatar(
-                backgroundColor: Colors.blue,
-                child: Text("We"),
-                radius: 50,
-              ),
-              CircleAvatar(
-                backgroundColor: Colors.blue,
-                child: Text("We"),
-                radius: 50,
-              ),
-              CircleAvatar(
-                backgroundColor: Colors.blue,
-                child: Text("We"),
-                radius: 50,
-              ),
-            ],
-          ),
-        ),
-        ListTile(
-          leading: CircleAvatar(
-            backgroundColor: Colors.blue,
-            child: Text("FL"),
-          ),
-          title: Text("Flutter"),
-          subtitle: Text("programmet"),
-          trailing: Icon(Icons.emoji_objects_rounded),
-          isThreeLine: true,
-        ),
-        ListTile(
-          leading: CircleAvatar(
-            backgroundColor: Colors.blue,
-            child: Text("FL"),
-          ),
-          title: Text("Flutter"),
-          subtitle: Text("programmet"),
-          trailing: Icon(Icons.emoji_objects_rounded),
-          isThreeLine: true,
-        ),
-      ],
-    );
+    return ListView.builder(
+        physics: BouncingScrollPhysics(),
+        itemCount: mobile.length,
+        itemBuilder: (context, i) {
+          return ListTile(
+            leading: CircleAvatar(
+              backgroundColor: Colors.blue,
+              child: Text(mobile[i]["avatar"]),
+            ),
+            title: Text(mobile[i]["name"]),
+            subtitle: Text(mobile[i]["screen"]),
+            trailing: Icon(Icons.emoji_objects_rounded),
+            isThreeLine: true,
+          );
+        });
   }
 }
