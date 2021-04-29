@@ -20,24 +20,34 @@ class _TestState extends State<Test> {
   ];
   @override
   Widget build(BuildContext context) {
-    return GridView.builder(
-        physics: BouncingScrollPhysics(),
-        itemCount: mobile.length,
-        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-            crossAxisCount: 2,
-            crossAxisSpacing: 5,
-            mainAxisSpacing: 5,
-            childAspectRatio: 3),
-        itemBuilder: (context, i) {
-          return Container(
-            // margin: EdgeInsets.only(top: 10, left: 5, right: 5),
-            child: ListTile(
-              tileColor: Colors.red,
-              title: Text(mobile[i]["name"]),
-              subtitle: Text(mobile[i]["screen"]),
-              leading: Icon(Icons.alarm_add),
-            ),
-          );
-        });
+    return GridView(
+      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+        crossAxisCount: 2,
+        mainAxisSpacing: 5,
+        crossAxisSpacing: 5,
+      ),
+      children: [
+        Container(
+          child: Text("Fluter"),
+          height: 200,
+          color: Colors.blue[100],
+        ),
+        Container(
+          child: Text("Fluter"),
+          height: 200,
+          color: Colors.blue[200],
+        ),
+        Container(
+          child: Text("Fluter"),
+          height: 200,
+          color: Colors.blue[300],
+        ),
+        Container(
+          child: Text("Fluter"),
+          height: 200,
+          color: Colors.blue[400],
+        ),
+      ],
+    );
   }
 }
