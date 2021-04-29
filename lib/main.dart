@@ -10,8 +10,10 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
         title: "Course Flutter",
+        debugShowCheckedModeBanner: false,
         home: Scaffold(
           appBar: AppBar(
+            title: Text("Flutter"),
             //leading: IconButton(
             //  icon: Icon(Icons.arrow_back),
             //  onPressed: () {},
