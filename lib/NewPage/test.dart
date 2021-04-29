@@ -11,41 +11,32 @@ class _TestState extends State<Test> {
   Widget build(BuildContext context) {
     return Wrap(
       children: [
-        ListTile(
-          //contentPadding: EdgeInsets.all(10),
-          tileColor: Colors.blue,
-          leading: Icon(Icons.access_alarm),
-          title: Text("Flutter"),
-          subtitle: Text(_sub),
-          isThreeLine: true,
-          selected: true,
-          onTap: () {
-            setState(() {
-              _sub = "OnTap";
-            });
-          },
-          trailing: Icon(Icons.face_unlock_outlined),
-        ),
-        ListTile(
-          leading: GestureDetector(
-            behavior: HitTestBehavior.translucent,
-            onTap: () {
-              print("ontap");
-            },
-            child: Container(
-              width: 48,
-              height: 48,
-              padding: EdgeInsets.symmetric(vertical: 4.0),
-              alignment: Alignment.center,
-              child: CircleAvatar(
-                backgroundImage: NetworkImage(
-                    "https://www.emmegi.co.uk/wp-content/uploads/2019/01/User-Icon.jpg"),
-              ),
-            ),
+        GestureDetector(
+          child: CircleAvatar(
+            backgroundColor: Colors.blue,
+            child: Text('WE'),
           ),
-          title: Text('title'),
-          dense: false,
-        ),
+          onTap: () {
+            ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+              backgroundColor: Colors.red,
+              content: Text("Flutter"),
+              action: SnackBarAction(
+                label: "Action",
+                onPressed: () {},
+              ),
+              duration: const Duration(milliseconds: 1500),
+              width: 280.0, // Width of the SnackBar.
+              padding: const EdgeInsets.symmetric(
+                horizontal: 8.0, // Inner padding for SnackBar content.
+              ),
+
+              behavior: SnackBarBehavior.floating,
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(10.0),
+              ),
+            ));
+          },
+        )
       ],
     );
   }
