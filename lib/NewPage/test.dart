@@ -9,6 +9,8 @@ class Test extends StatefulWidget {
 class _TestState extends State<Test> {
   TextEditingController username = new TextEditingController();
   GlobalKey<FormState> formState = new GlobalKey<FormState>();
+  var user;
+  var name;
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -28,6 +30,9 @@ class _TestState extends State<Test> {
                     }
                     return null;
                   },
+                  onSaved: (ch) {
+                    user = ch;
+                  },
                 ),
               ),
               Container(
@@ -39,13 +44,18 @@ class _TestState extends State<Test> {
                     }
                     return null;
                   },
+                  onSaved: (ch) {
+                    name = ch;
+                  },
                 ),
               ),
               ElevatedButton(
                   onPressed: () {
                     var fomdata = formState.currentState;
+                    fomdata.save();
                     if (fomdata.validate()) {
                       print("valider");
+                      print("name:$name");
                     } else {
                       return null;
                     }
