@@ -18,22 +18,17 @@ class _TestState extends State<Test> {
             Container(
               padding: EdgeInsets.all(10),
               child: TextFormField(
-                  cursorColor: Colors.red,
-                  cursorHeight: 30,
-                  cursorWidth: 20,
-                  //maxLength: 20,
-                  // maxLines: 2,
-                  //obscureText: true,
-                  textInputAction: TextInputAction.go,
-                  controller: username,
-                  decoration: InputDecoration()),
+                onTap: () {
+                  print("object");
+                },
+                onChanged: (string) {
+                  print("$string");
+                },
+                onEditingComplete: () {
+                  print("complite");
+                },
+              ),
             ),
-            ElevatedButton(
-              onPressed: () {
-                print(username.text);
-              },
-              child: Text("username.text"),
-            )
           ],
         ),
       ),
