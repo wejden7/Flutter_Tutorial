@@ -5,127 +5,74 @@ class Test extends StatefulWidget {
   _TestState createState() => _TestState();
 }
 
-class _TestState extends State<Test> with SingleTickerProviderStateMixin {
-  TabController myControler;
-  int currentIndexVal = 0;
+class _TestState extends State<Test> {
+  PageController pc;
+  @override
   void initState() {
-    print("Flutter a good FromWorek ");
-    myControler = new TabController(length: 3, vsync: this);
+    pc = new PageController(
+        initialPage: 1, keepPage: true, viewportFraction: 0.75);
     super.initState();
   }
 
-  List<Widget> WidgetPage = [
-    Text(
-      "Flutter one",
-      style: TextStyle(fontSize: 40),
-    ),
-    Text(
-      "Flutter tow",
-      style: TextStyle(fontSize: 40),
-    ),
-    Text(
-      "Flutter thre",
-      style: TextStyle(fontSize: 40),
-    ),
+  List images = [
+    {
+      "image":
+          "https://i.pinimg.com/originals/7e/9b/65/7e9b65b5d6f56313795ecf375ecd6480.jpg"
+    },
+    {
+      "image":
+          "https://i.pinimg.com/originals/7a/f9/b2/7af9b249e46e94eee81cdf7097f67202.jpg"
+    },
+    {"image": "https://i.redd.it/h8dzlb3w5sv41.jpg"},
+    {
+      "image":
+          "https://i.pinimg.com/originals/1b/c8/92/1bc892daa1f76a0219d3c0fd596ecb26.jpg"
+    },
+    {
+      "image":
+          "https://i.pinimg.com/originals/1b/c8/92/1bc892daa1f76a0219d3c0fd596ecb26.jpg"
+    },
   ];
+  @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: "Course Flutter",
-      debugShowCheckedModeBanner: false,
       home: Scaffold(
-          appBar: AppBar(
-            title: Text("Flutter"),
-            bottom: TabBar(
-              controller: myControler,
-              //isScrollable: true,
-              indicatorColor: Colors.white,
-              indicatorWeight: 5,
-              indicatorPadding: EdgeInsets.all(1),
-              labelColor: Colors.black,
-              onTap: (index) {
-                print(index);
-              },
-              tabs: [
-                Tab(child: Text("Flutter"), icon: Icon(Icons.one_k)),
-                Tab(
-                  child: Icon(Icons.one_k),
-                ),
-                Tab(
-                  child: Icon(Icons.one_k),
-                )
-              ],
-            ),
-            actions: [
-              IconButton(
-                icon: Icon(Icons.exit_to_app),
-                onPressed: () {},
+        appBar: AppBar(
+          title: Text("Flutter"),
+          leading: Icon(Icons.ac_unit_outlined),
+          actions: [
+            IconButton(
+                icon: Icon(Icons.access_alarms_rounded), onPressed: () {}),
+            IconButton(icon: Icon(Icons.face), onPressed: () {})
+          ],
+        ),
+        body: Column(
+          children: [
+            Container(
+              height: 300,
+              child: PageView.builder(
+                itemCount: images.length,
+                itemBuilder: (context, i) {
+                  return Image.network(images[i]["image"]);
+                },
+                controller: pc,
+                physics: BouncingScrollPhysics(),
+                onPageChanged: (index) {
+                  print(index);
+                },
+                reverse: true,
+                //scrollDirection: Axis.vertical,
               ),
-              IconButton(icon: Icon(Icons.alarm), onPressed: () {})
-            ],
-          ),
-          bottomNavigationBar: BottomNavigationBar(
-            currentIndex: currentIndexVal,
-            selectedItemColor: Colors.cyan,
-            selectedFontSize: 20,
-            selectedIconTheme: IconThemeData(color: Colors.black, size: 50),
-            showSelectedLabels: false,
-            showUnselectedLabels: false,
-            backgroundColor: Colors.red,
-            onTap: (index) {
-              print(index);
-              setState(() {
-                currentIndexVal = index;
-              });
-            },
-            items: [
-              BottomNavigationBarItem(
-                  label: "Widget one", icon: Icon(Icons.ondemand_video_sharp)),
-              BottomNavigationBarItem(
-                  label: "Widget tow", icon: Icon(Icons.dashboard_outlined)),
-              BottomNavigationBarItem(
-                  label: "Widget three", icon: Icon(Icons.dashboard_outlined)),
-            ],
-          ),
-          drawer: Drawer(
-            child: ListView(
-              children: [
-                UserAccountsDrawerHeader(
-                    currentAccountPicture: CircleAvatar(
-                      child: Text("W"),
-                      backgroundColor: Colors.red,
-                    ),
-                    accountName: Text("Wejden"),
-                    accountEmail: Text("Wejdenchneti7@gmail.com")),
-                ListTile(
-                  leading: Icon(Icons.home),
-                  title: Text("Home"),
-                  selectedTileColor: Colors.red[100],
-                  trailing: Icon(Icons.dock_sharp),
-                  selected: true,
-                ),
-                ListTile(
-                  leading: Icon(Icons.home),
-                  title: Text("page1"),
-                  trailing: Icon(Icons.dock_sharp),
-                ),
-                ListTile(
-                  leading: Icon(Icons.home),
-                  title: Text("page2"),
-                  trailing: Icon(Icons.dock_sharp),
-                ),
-                ListTile(
-                  leading: Icon(Icons.home),
-                  title: Text("page3"),
-                  trailing: Icon(Icons.dock_sharp),
-                ),
-                ListTile(
-                  leading: Icon(Icons.exit_to_app),
-                  title: Text("Exite"),
-                ),
-              ],
             ),
-          ),
-          body: WidgetPage.elementAt(currentIndexVal)),
+            ElevatedButton(
+                onPressed: () {
+                  pc.animateToPage(1,
+                      duration: Duration(seconds: 5), curve: Curves.bounceOut);
+                },
+                child: Text("go to page 2"))
+          ],
+        ),
+      ),
     );
   }
 }
