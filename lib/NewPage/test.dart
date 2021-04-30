@@ -6,19 +6,8 @@ class Test extends StatefulWidget {
 }
 
 class _TestState extends State<Test> with SingleTickerProviderStateMixin {
-  List mobile = [
-    {"name": "Sumsang s1", "screen": "7.1", "avatar": "SA"},
-    {"name": "Sumsang s2", "screen": "7.1", "avatar": "SA"},
-    {"name": "Sumsang s3", "screen": "7.1", "avatar": "SA"},
-    {"name": "Sumsang s4", "screen": "7.1", "avatar": "SA"},
-    {"name": "Sumsang s5", "screen": "7.1", "avatar": "SA"},
-    {"name": "Sumsang s6", "screen": "7.1", "avatar": "DR"},
-    {"name": "Sumsang s7", "screen": "7.1", "avatar": "SA"},
-    {"name": "Sumsang s8", "screen": "7.1", "avatar": "SA"},
-    {"name": "Sumsang s9", "screen": "7.1", "avatar": "IF"},
-    {"name": "Sumsang s10", "screen": "7.1", "avatar": "Ap"},
-  ];
   TabController myControler;
+  int currentIndexVal = 0;
   void initState() {
     print("Flutter a good FromWorek ");
     myControler = new TabController(length: 3, vsync: this);
@@ -58,6 +47,27 @@ class _TestState extends State<Test> with SingleTickerProviderStateMixin {
               onPressed: () {},
             ),
             IconButton(icon: Icon(Icons.alarm), onPressed: () {})
+          ],
+        ),
+        bottomNavigationBar: BottomNavigationBar(
+          currentIndex: currentIndexVal,
+          selectedItemColor: Colors.cyan,
+          selectedFontSize: 20,
+          selectedIconTheme: IconThemeData(color: Colors.black, size: 50),
+          showSelectedLabels: false,
+          showUnselectedLabels: false,
+          backgroundColor: Colors.red,
+          onTap: (index) {
+            print(index);
+            setState(() {
+              currentIndexVal = index;
+            });
+          },
+          items: [
+            BottomNavigationBarItem(
+                label: "Widget one", icon: Icon(Icons.ondemand_video_sharp)),
+            BottomNavigationBarItem(
+                label: "Widget tow", icon: Icon(Icons.dashboard_outlined)),
           ],
         ),
         drawer: Drawer(
