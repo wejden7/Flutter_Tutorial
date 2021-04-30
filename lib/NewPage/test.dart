@@ -18,7 +18,11 @@ class _TestState extends State<Test> {
     {"name": "Sumsang s9", "screen": "7.1", "avatar": "IF"},
     {"name": "Sumsang s10", "screen": "7.1", "avatar": "Ap"},
   ];
-  @override
+  void initState() {
+    print("Flutter a good FromWorek ");
+    super.initState();
+  }
+
   Widget build(BuildContext context) {
     return TabBarView(children: [
       ListView(
