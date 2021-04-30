@@ -5,7 +5,7 @@ class Test extends StatefulWidget {
   _TestState createState() => _TestState();
 }
 
-class _TestState extends State<Test> {
+class _TestState extends State<Test> with SingleTickerProviderStateMixin {
   List mobile = [
     {"name": "Sumsang s1", "screen": "7.1", "avatar": "SA"},
     {"name": "Sumsang s2", "screen": "7.1", "avatar": "SA"},
@@ -18,13 +18,15 @@ class _TestState extends State<Test> {
     {"name": "Sumsang s9", "screen": "7.1", "avatar": "IF"},
     {"name": "Sumsang s10", "screen": "7.1", "avatar": "Ap"},
   ];
+  TabController myControler;
   void initState() {
     print("Flutter a good FromWorek ");
+    myControler = new TabController(length: 3, vsync: this, initialIndex: 2);
     super.initState();
   }
 
   Widget build(BuildContext context) {
-    return TabBarView(children: [
+    return TabBarView(controller: myControler, children: [
       ListView(
         children: [
           ListTile(
