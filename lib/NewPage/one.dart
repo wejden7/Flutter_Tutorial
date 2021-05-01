@@ -24,6 +24,12 @@ class _OneState extends State<One> {
             },
             child: Text("Go To Test Page"),
           ),
+          ElevatedButton(
+            onPressed: () {
+              Navigator.of(context).pushNamed("tow");
+            },
+            child: Text("Go To tow Page"),
+          ),
         ],
       ),
     );

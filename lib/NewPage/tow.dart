@@ -12,7 +12,19 @@ class _TowState extends State<Tow> {
       appBar: AppBar(
         title: Text("Tow page"),
       ),
-      body: Container(),
+      body: Column(
+        children: [
+          Container(),
+          ElevatedButton(
+            onPressed: () {
+              if (Navigator.of(context).canPop()) {
+                Navigator.of(context).pop();
+              }
+            },
+            child: Text("Go To Test Page"),
+          ),
+        ],
+      ),
     );
   }
 }
