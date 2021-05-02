@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:fluttertuto/NewPage/one.dart';
-import 'package:fluttertuto/NewPage/test.dart';
+
 import 'package:fluttertuto/NewPage/three.dart';
 import 'package:fluttertuto/NewPage/tow.dart';
+import 'package:fluttertuto/auth/login.dart';
 
 void main() {
   runApp(MyApp());
@@ -11,10 +11,13 @@ void main() {
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(routes: {
-      "one": (context) => One(),
-      "tow": (context) => Tow(),
-      "three": (context) => Three()
-    }, home: Test());
+    return MaterialApp(
+        debugShowCheckedModeBanner: false,
+        routes: {
+          "login": (context) => Login(),
+          "tow": (context) => Tow(),
+          "three": (context) => Three()
+        },
+        home: Login());
   }
 }
