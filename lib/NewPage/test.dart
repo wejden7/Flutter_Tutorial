@@ -21,6 +21,13 @@ class _TestState extends State<Test> {
     return Scaffold(
         appBar: AppBar(
           title: Text("Flutter Home Page"),
+          actions: [
+            IconButton(
+                icon: Icon(Icons.search),
+                onPressed: () {
+                  showSearch(context: context, delegate: DataSearch());
+                })
+          ],
         ),
         body: Column(
           children: [
@@ -37,5 +44,62 @@ class _TestState extends State<Test> {
                 child: Text("Show Modal Bottom sheet "))
           ],
         ));
+  }
+}
+
+class DataSearch extends SearchDelegate {
+  List names = [
+    "wejden",
+    "Ala",
+    "Malek",
+    "khalil",
+  ];
+  @override
+  List<Widget> buildActions(BuildContext context) {
+    return [
+      IconButton(
+          icon: Icon(Icons.close),
+          onPressed: () {
+            query = "";
+          })
+    ];
+  }
+
+  @override
+  Widget buildLeading(BuildContext context) {
+    return IconButton(
+        icon: Icon(Icons.arrow_back),
+        onPressed: () {
+          close(context, null);
+        });
+  }
+
+  @override
+  Widget buildResults(BuildContext context) {
+    return Text(query);
+  }
+
+  @override
+  Widget buildSuggestions(BuildContext context) {
+    List filternames = names
+        .where((element) =>
+            element.toString().toUpperCase().contains(query.toUpperCase()))
+        .toList();
+    return ListView.builder(
+        itemCount: query == "" ? names.length : filternames.length,
+        itemBuilder: (context, i) {
+          return InkWell(
+              onTap: () {
+                query = query == "" ? names[i] : filternames[i];
+                showResults(context);
+              },
+              child: query == ""
+                  ? ListTile(
+                      title: Text(names[i]),
+                    )
+                  : ListTile(
+                      title: Text(filternames[i]),
+                    ));
+        });
   }
 }
