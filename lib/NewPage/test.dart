@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
 
 class Test extends StatefulWidget {
   @override
@@ -7,33 +6,51 @@ class Test extends StatefulWidget {
 }
 
 class _TestState extends State<Test> {
-  var sliderValue = 10.0;
+  ScrollController sc;
+  @override
+  void initState() {
+    sc = new ScrollController();
+    sc.addListener(() {
+      print(sc.offset);
+    });
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
           title: Text("Flutter Home Page"),
         ),
-        body: Column(
+        body: ListView(
+          controller: sc,
           children: [
             ElevatedButton(
-              onPressed: () {
-                Navigator.of(context).pushReplacementNamed("one");
-              },
-              child: Text("Go To One Page"),
-            ),
-            Slider(
-                max: 100,
-                min: 0,
-                activeColor: Colors.black,
-                inactiveColor: Colors.red,
-                label: "Wejden",
-                value: sliderValue,
-                onChanged: (x) {
+                onPressed: () {
                   setState(() {
-                    sliderValue = x;
+                    // sc.jumpTo(sc.position.maxScrollExtent);
+                    sc.animateTo(sc.position.maxScrollExtent,
+                        duration: Duration(seconds: 1),
+                        curve: Curves.bounceOut);
                   });
-                })
+                },
+                child: Text("Go To Bottom")),
+            ...List.generate(
+                20,
+                (index) => Container(
+                      margin: EdgeInsets.all(10),
+                      child: Text("container $index"),
+                      color: index.isEven ? Colors.red : Colors.green,
+                      width: double.infinity,
+                      height: 100,
+                    )),
+            ElevatedButton(
+                onPressed: () {
+                  //sc.jumpTo(sc.position.minScrollExtent);
+                  sc.animateTo(sc.position.minScrollExtent,
+                      duration: Duration(seconds: 3), curve: Curves.linear);
+                },
+                child: Text("Go To Top")),
           ],
         ));
   }
