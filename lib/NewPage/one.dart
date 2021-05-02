@@ -20,13 +20,13 @@ class _OneState extends State<One> {
           ),
           ElevatedButton(
             onPressed: () {
-              Navigator.of(context).pop();
+              if (Navigator.of(context).canPop()) Navigator.of(context).pop();
             },
             child: Text("Go To Test Page"),
           ),
           ElevatedButton(
             onPressed: () {
-              Navigator.of(context).pushNamed("tow");
+              Navigator.of(context).pushReplacementNamed("tow");
             },
             child: Text("Go To tow Page"),
           ),

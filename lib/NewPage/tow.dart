@@ -21,7 +21,7 @@ class _TowState extends State<Tow> {
                 Navigator.of(context).pop();
               }
             },
-            child: Text("Go To Test Page"),
+            child: Text("Go To - Page"),
           ),
         ],
       ),

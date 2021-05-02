@@ -16,7 +16,7 @@ class _TestState extends State<Test> {
           children: [
             ElevatedButton(
               onPressed: () {
-                Navigator.of(context).pushNamed("one");
+                Navigator.of(context).pushReplacementNamed("one");
               },
               child: Text("Go To One Page"),
             ),
