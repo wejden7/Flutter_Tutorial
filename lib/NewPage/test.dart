@@ -22,35 +22,19 @@ class _TestState extends State<Test> {
         appBar: AppBar(
           title: Text("Flutter Home Page"),
         ),
-        body: ListView(
-          controller: sc,
+        body: Column(
           children: [
             ElevatedButton(
                 onPressed: () {
-                  setState(() {
-                    // sc.jumpTo(sc.position.maxScrollExtent);
-                    sc.animateTo(sc.position.maxScrollExtent,
-                        duration: Duration(seconds: 1),
-                        curve: Curves.bounceOut);
-                  });
+                  showModalBottomSheet(
+                      context: context,
+                      builder: (context) {
+                        return Text(
+                          "Model Bottom",
+                        );
+                      });
                 },
-                child: Text("Go To Bottom")),
-            ...List.generate(
-                20,
-                (index) => Container(
-                      margin: EdgeInsets.all(10),
-                      child: Text("container $index"),
-                      color: index.isEven ? Colors.red : Colors.green,
-                      width: double.infinity,
-                      height: 100,
-                    )),
-            ElevatedButton(
-                onPressed: () {
-                  //sc.jumpTo(sc.position.minScrollExtent);
-                  sc.animateTo(sc.position.minScrollExtent,
-                      duration: Duration(seconds: 3), curve: Curves.linear);
-                },
-                child: Text("Go To Top")),
+                child: Text("Show Modal Bottom sheet "))
           ],
         ));
   }
